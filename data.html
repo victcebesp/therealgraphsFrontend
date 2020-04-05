@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>15 most fatally affected countries by Covid-19</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="http://www.therealgraphs.com/">
+        <strong>TheRealGraphs</strong>
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="http://www.therealgraphs.com/data.html">
+          Data
+        </a>
+        <a class="navbar-item" href="http://www.therealgraphs.com/tutorial.html">
+          Tutorial
+        </a>
+      </div>
+    </div>
+  </nav>
+  <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <p class="title is-2 has-text-centered">
+              Data source
+            </p>
+            <p>The data used to build the visualization is obtained from an open source <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">GitHub repository</a> operated by the
+              Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) and supported Supported by
+              ESRI Living Atlas Team and the Johns Hopkins University Applied Physics Lab (JHU APL).</p>
+            <p>This raw data has been preprocessed as shown in the <a href="http://www.therealgraphs.com/tutorial.html">tutorial </a>
+             and it is daily updated using AWS.
+            </p>
+            <p>As it can be read on the <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">GitHub repository</a>,
+            in order to build the dataset, they are using another data sources. Some of them are:</p>
+            <div id="data-sources-sample">
+              <a href="https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases" target="_blank">
+                <div class="box">
+                  <figure class="image is-2by1">
+                    <img src="images/ECDC.png" alt="ECDC">
+                  </figure>
+                </div>
+              </a>
+              <a href="https://www.who.int/", target="_blank">
+                <div class="box">
+                  <figure class="image is-2by1">
+                    <img src="images/WHO.png" alt="WHO">
+                  </figure>
+                </div>
+              </a>
+              <a href="https://www.worldometers.info/coronavirus/" target="_blank">
+                <div class="box">
+                  <figure class="image is-2by1">
+                    <img src="images/worldometer.png" alt="worldometer">
+                  </figure>
+                </div>
+              </a>
+              <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">
+                <div id="others-box" class="box has-text-centered">
+                  Others
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="buttons is-centered">
+        <a href = "https://github.com/victcebesp/" target="_blank" class="button">
+          <span class="icon">
+            <i class="fab fa-github"></i>
+          </span>
+          <span>victcebesp</span>
+        </a>
+        <a href="https://twitter.com/victcebesp" target="_blank" class="button">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
+          <span>@victcebesp</span>
+        </a>
+        <a href="https://www.linkedin.com/in/victorceballosespinosa/" target="_blank" class="button">
+          <span class="icon">
+            <i class="fab fa-linkedin"></i>
+          </span>
+          <span>Victor Ceballos Espinosa</span>
+        </a>
+      </p>
+    </div>
+  </section>
+  <script src="navbar.js" type="text/javascript"></script>
+  </body>
+</html>

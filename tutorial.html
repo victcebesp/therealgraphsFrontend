@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>15 most fatally affected countries by Covid-19</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="http://www.therealgraphs.com/">
+        <strong>TheRealGraphs</strong>
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="http://www.therealgraphs.com/data.html">
+          Data
+        </a>
+        <a class="navbar-item" href="http://www.therealgraphs.com/tutorial.html">
+          Tutorial
+        </a>
+      </div>
+    </div>
+  </nav>
+  <section class="section">
+      <div class="container">
+          <div class="columns">
+            <div class="column">
+                <p class="title is-2 has-text-centered">
+                  Graphs construction tutorial
+                </p>
+                <p class="has-text-centered subtitle">
+                    In this section it will be explained how both graphs showing in the dashboard are built to be fully transparent.
+                </p>
+            </div>
+          </div>
+      </div>
+  </section>
+  <section class="section">
+      <div class="container">
+          <div class="columns">
+            <div class="column">
+                <p class="title is-3 has-text-centered">
+                  Bar chart
+                </p>
+                <p class="has-text-centered">In the bar chart, each bar is representing the percentages of confirmed, fatal
+                    and recovered cases in a country at a specific date selected using the slider. It is important to note that only the top fifteen more
+                fatally-affected countries are shown. Additionally, China's bar is displayed separated from the rest of the bars
+                to make it easier to compare it with the rest of the countries.</p>
+                <div id="bar-chart-explanation">
+                    <div class="case-type-explanation">
+                        <p class="title is-5 has-text-centered">
+                          Confirmed cases' percentage
+                        </p>
+                        <div class="bar-example">
+                            <div class="confirmations-bar is-active"></div>
+                            <div class="deaths-bar"></div>
+                            <div class="recoveries-bar"></div>
+                        </div>
+                        <p class="has-text-justified bar-description">
+                            In the confirmed cases reported from the data source, recovered and fatal cases are not discounted
+                            from the confirmed cases. Therefore, people counted in the recovered and fatal cases are also counted in the
+                            confirmed cases. To correct this, confirmed cases were calculated using the next equation:
+                            \[confirmed = {confirmed - recovered - fatal}\]
+                        </p>
+                        <p class="has-text-justified bar-description">
+                            Finally, these newly-calculated confirmed cases are divided over the total as follows:
+                            \[percentage = {confirmed \over total}\]
+                        </p>
+                    </div>
+                    <div class="case-type-explanation">
+                        <p class="title is-5 has-text-centered">
+                          Fatal cases' percentage
+                        </p>
+                        <div class="bar-example">
+                            <div class="confirmations-bar"></div>
+                            <div class="deaths-bar is-active"></div>
+                            <div class="recoveries-bar"></div>
+                        </div>
+                        <p class="has-text-justified bar-description">
+                            The calculation of the fatal cases' percentage is simpler. The number of fatal cases each day is divided
+                            by the total amount of cases following the equation:
+                            \[percentage = {fatal \over total}\]
+                        </p>
+                    </div>
+                    <div class="case-type-explanation">
+                        <p class="title is-5 has-text-centered">
+                          Recovered cases' percentage
+                        </p>
+                        <div class="bar-example">
+                            <div class="confirmations-bar"></div>
+                            <div class="deaths-bar"></div>
+                            <div class="recoveries-bar is-active"></div>
+                        </div>
+                        <p class="has-text-justified bar-description">
+                            The calculation of the recovered cases' percentage is very similar to the fatal cases one.
+                            The number of recovered cases each day is divided by the total amount of cases following the equation:
+                            \[percentage = {recovered \over total}\]
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+  </section>
+  <section class="section">
+      <div class="container">
+          <div class="columns">
+            <div class="column">
+                <p class="title is-3 has-text-centered">
+                  Line chart
+                </p>
+                <p class="has-text-centered">
+                    In the line chart, each line represents the confirmed cases in a country until a certain date selected by the slider.
+                    To know which specific country each line is representing, it has been added a legend on the right-hand side.
+                    It is important to note that the same top fifteen more fatally-affected countries are shown. In this
+                    case, China's data is not plotted separately as it is interesting comparing it in the same axes as the rest of countries.
+                </p>
+            </div>
+          </div>
+          <p class="buttons is-centered">
+            <a href = "https://github.com/victcebesp/" target="_blank" class="button">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>victcebesp</span>
+            </a>
+            <a href="https://twitter.com/victcebesp" target="_blank" class="button">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
+              </span>
+              <span>@victcebesp</span>
+            </a>
+            <a href="https://www.linkedin.com/in/victorceballosespinosa/" target="_blank" class="button">
+              <span class="icon">
+                <i class="fab fa-linkedin"></i>
+              </span>
+              <span>Victor Ceballos Espinosa</span>
+            </a>
+          </p>
+      </div>
+  </section>
+  <script src="navbar.js" type="text/javascript"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src ="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </body>
+</html>
