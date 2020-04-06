@@ -18,7 +18,7 @@ function get_updated_spec(maximumEncodedDay, maximumConfirmedCases) {
   return {
     $schema: "https://vega.github.io/schema/vega-lite/v4.json",
     data: {
-      url: "https://covid-visualization.s3.amazonaws.com/representative.csv"
+      url: "http://therealgraphs.com.s3.amazonaws.com/representative.csv"
     },
     config: {
       view: {
@@ -94,7 +94,7 @@ function get_updated_spec(maximumEncodedDay, maximumConfirmedCases) {
                       }
                     },
                     init: {
-                      dateSlider: 1
+                      dateSlider: maximumEncodedDay
                     }
                   }
                 },
@@ -165,7 +165,7 @@ function get_updated_spec(maximumEncodedDay, maximumConfirmedCases) {
                       }
                     },
                     init: {
-                      dateSlider: 1
+                      dateSlider: maximumEncodedDay
                     }
                   }
                 },
