@@ -53,29 +53,28 @@
                 <p class="title is-3 has-text-centered">
                   Bar chart
                 </p>
-                <p class="has-text-centered">In the bar chart, each bar is representing the percentages of confirmed, fatal
+                <p class="has-text-centered">In the bar chart, each bar is representing the percentages of active, fatal
                     and recovered cases in a country at a specific date selected using the slider. It is important to note that only the top fifteen more
                 fatally-affected countries are shown. Additionally, China's bar is displayed separated from the rest of the bars
                 to make it easier to compare it with the rest of the countries.</p>
                 <div id="bar-chart-explanation">
                     <div class="case-type-explanation">
                         <p class="title is-5 has-text-centered">
-                          Confirmed cases' percentage
+                          Active cases' percentage
                         </p>
                         <div class="bar-example">
-                            <div class="confirmations-bar is-active"></div>
+                            <div class="active-bar is-active"></div>
                             <div class="deaths-bar"></div>
                             <div class="recoveries-bar"></div>
                         </div>
                         <p class="has-text-justified bar-description">
-                            In the confirmed cases reported from the data source, recovered and fatal cases are not discounted
-                            from the confirmed cases. Therefore, people counted in the recovered and fatal cases are also counted in the
-                            confirmed cases. To correct this, confirmed cases were calculated using the next equation:
-                            \[confirmed = {confirmed - recovered - fatal}\]
+                            In order to calculate active cases from the reported confirmed cases from the data source, recovered and fatal cases are discounted
+                            from confirmed cases. To calculate this, the following equation is used:
+                            \[active = {confirmed - recovered - fatal}\]
                         </p>
                         <p class="has-text-justified bar-description">
-                            Finally, these newly-calculated confirmed cases are divided over the total as follows:
-                            \[percentage = {confirmed \over total}\]
+                            Finally, these newly-calculated active cases are divided over the total confirmed cases as follows:
+                            \[percentage = {active \over confirmed}\]
                         </p>
                     </div>
                     <div class="case-type-explanation">
@@ -83,14 +82,14 @@
                           Fatal cases' percentage
                         </p>
                         <div class="bar-example">
-                            <div class="confirmations-bar"></div>
+                            <div class="active-bar"></div>
                             <div class="deaths-bar is-active"></div>
                             <div class="recoveries-bar"></div>
                         </div>
                         <p class="has-text-justified bar-description">
                             The calculation of the fatal cases' percentage is simpler. The number of fatal cases each day is divided
-                            by the total amount of cases following the equation:
-                            \[percentage = {fatal \over total}\]
+                            by the total amount of confirmed cases following the equation:
+                            \[percentage = {fatal \over confirmed}\]
                         </p>
                     </div>
                     <div class="case-type-explanation">
@@ -98,14 +97,14 @@
                           Recovered cases' percentage
                         </p>
                         <div class="bar-example">
-                            <div class="confirmations-bar"></div>
+                            <div class="active-bar"></div>
                             <div class="deaths-bar"></div>
                             <div class="recoveries-bar is-active"></div>
                         </div>
                         <p class="has-text-justified bar-description">
                             The calculation of the recovered cases' percentage is very similar to the fatal cases one.
-                            The number of recovered cases each day is divided by the total amount of cases following the equation:
-                            \[percentage = {recovered \over total}\]
+                            The number of recovered cases each day is divided by the total amount of confirmed cases following the equation:
+                            \[percentage = {recovered \over confirmed}\]
                         </p>
                     </div>
                 </div>
@@ -121,7 +120,7 @@
                   Line chart
                 </p>
                 <p class="has-text-centered">
-                    In the line chart, each line represents the confirmed cases in a country until a certain date selected by the slider.
+                    In the line chart, each line represents the daily evolution of active cases in a country until a certain date selected by the slider.
                     To know which specific country each line is representing, it has been added a legend on the right-hand side.
                     It is important to note that the same top fifteen more fatally-affected countries are shown. In this
                     case, China's data is not plotted separately as it is interesting comparing it in the same axes as the rest of countries.

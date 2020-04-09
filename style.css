@@ -45,14 +45,14 @@ p.buttons {
 #bar-chart-title {
   position: relative;
   top: 40px;
-  left: 154px;
+  left: 100px;
   display: inline;
 }
 
 #line-chart-title {
   position: relative;
   top: 40px;
-  left: 400px;
+  left: 340px;
   display: inline;
 }
 
@@ -85,7 +85,7 @@ p.buttons {
   font-size: 30px;
 }
 
-.confirmations-bar {
+.active-bar {
   background-color: #4e7aa6;
   width: 60%;
   display: inline-block;
@@ -163,4 +163,10 @@ p.buttons {
 #data-sources-sample #others-box {
   font-size: 2em;
   padding-top: 50px;
+}
+
+#visualization {
+  width: 30em;
+  overflow-x: auto;
+  white-space: nowrap;
 }

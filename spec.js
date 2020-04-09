@@ -5,16 +5,16 @@ axios
   .get(url)
   .then(response => {
     let maximumEncodedDay = response.data.maximum_encoded_day;
-    let maximumConfirmedCases = response.data.maximum_confirmed_cases;
+    let maximumActiveCases = response.data.maximum_active_cases;
     let spec = get_updated_spec(
       parseInt(maximumEncodedDay),
-      parseInt(maximumConfirmedCases)
+      parseInt(maximumActiveCases)
     );
     vegaEmbed("#vis", spec);
   })
   .catch(error => console.log(error));
 
-function get_updated_spec(maximumEncodedDay, maximumConfirmedCases) {
+function get_updated_spec(maximumEncodedDay, maximumActiveCases) {
   return {
     $schema: "https://vega.github.io/schema/vega-lite/v4.json",
     data: {
@@ -69,7 +69,7 @@ function get_updated_spec(maximumEncodedDay, maximumConfirmedCases) {
                       labelFontSize: 14
                     },
                     scale: {
-                      domain: ["Deaths", "Recovered", "Confirmed"],
+                      domain: ["Deaths", "Recovered", "Active"],
                       range: ["#e25859", "#83BD33", "#4e7aa6"]
                     }
                   },
@@ -78,6 +78,18 @@ function get_updated_spec(maximumEncodedDay, maximumConfirmedCases) {
                       field: "Percentage",
                       type: "quantitative",
                       format: "p"
+                    },
+                    {
+                      field: "Active",
+                      type: "quantitative"
+                    },
+                    {
+                      field: "Deaths",
+                      type: "quantitative"
+                    },
+                    {
+                      field: "Recoveries",
+                      type: "quantitative"
                     }
                   ]
                 },
@@ -140,7 +152,7 @@ function get_updated_spec(maximumEncodedDay, maximumConfirmedCases) {
                     type: "nominal",
                     legend: null,
                     scale: {
-                      domain: ["Deaths", "Recovered", "Confirmed"],
+                      domain: ["Deaths", "Recovered", "Active"],
                       range: ["#e25859", "#83BD33", "#4e7aa6"]
                     }
                   },
@@ -149,6 +161,18 @@ function get_updated_spec(maximumEncodedDay, maximumConfirmedCases) {
                       field: "Percentage",
                       type: "quantitative",
                       format: "p"
+                    },
+                    {
+                      field: "Active",
+                      type: "quantitative"
+                    },
+                    {
+                      field: "Deaths",
+                      type: "quantitative"
+                    },
+                    {
+                      field: "Recoveries",
+                      type: "quantitative"
                     }
                   ]
                 },
@@ -189,7 +213,7 @@ function get_updated_spec(maximumEncodedDay, maximumConfirmedCases) {
             height: 330,
             encoding: {
               y: {
-                field: "Confirmations",
+                field: "Active",
                 type: "quantitative",
                 axis: {
                   title: "",
@@ -197,7 +221,7 @@ function get_updated_spec(maximumEncodedDay, maximumConfirmedCases) {
                   labelPadding: 15,
                 },
                 scale: {
-                  domain: [0, maximumConfirmedCases]
+                  domain: [0, maximumActiveCases]
                 }
               },
               x: {
